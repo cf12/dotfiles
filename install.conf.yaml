@@ -1,7 +1,7 @@
 - clean: ['~']
 
 - link:
-    ~/.profile: profile
-    ~/.zshenv: zshenv
-
-
+    ~/.vimrc: src/vimrc
+    ~/.tmux.conf: src/tmux.conf
+    ~/.config/fish/config.fish: src/config/fish/config.fish
+    ~/.config/nvim/init.vim: src/config/nvim/init.vim
