@@ -1,7 +1,11 @@
-- clean: ['~']
+- clean: ['~', '~/.config/fish', '~/.config/nvim']
 
 - link:
-    ~/.vimrc: src/vimrc
-    ~/.tmux.conf: src/tmux.conf
-    ~/.config/fish/config.fish: src/config/fish/config.fish
-    ~/.config/nvim/init.vim: src/config/nvim/init.vim
+    ~/.vimrc: 
+    ~/.tmux.conf: 
+    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/nvim/init.vim: config/nvim/init.vim
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
