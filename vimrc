@@ -1,11 +1,11 @@
-" >>> cf12's vimrc
+" === cf12's vimrc ===
 set nocompatible
 filetype plugin indent on
 syntax on
 
 runtime macros/matchit.vim
 
-" >>> general
+" === general ===
 set number
 set relativenumber
 set wildmenu
@@ -18,19 +18,19 @@ set nostartofline
 set confirm
 set mouse=a
 
-" >>> backup
+" === backup ===
 set nobackup
 set nowritebackup
 set nowb
 set noswapfile
 
-" >>> searching
+" === searching ===
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch 
 
-" >>> tabs + indents + wrapping
+" === tabs + indents + wrapping ===
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -39,7 +39,7 @@ set autoindent
 set smartindent
 set wrap 
 
-" >>> leader config
+" === leader ===
 let mapleader = ","
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>g mmgg=G'm<cr>
@@ -53,9 +53,6 @@ set lazyredraw
 
 " For regular expressions turn magic on
 set magic
-
-" Show matching brackets when text indicator is over them
-set showmatch 
 
 " No annoying sound on errors
 set noerrorbells
@@ -74,12 +71,12 @@ endif
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
-    let myUndoDir = expand(vimDir . '/undodir')
-    " Create dirs
-    call system('mkdir ' . vimDir)
-    call system('mkdir ' . myUndoDir)
-    let &undodir = myUndoDir
-    set undofile
+  let myUndoDir = expand(vimDir . '/undodir')
+  " Create dirs
+  call system('mkdir ' . vimDir)
+  call system('mkdir ' . myUndoDir)
+  let &undodir = myUndoDir
+  set undofile
 endif
 
 
@@ -110,18 +107,19 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Initialize Plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'vim-airline/vim-airline'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'tpope/vim-sleuth'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'lervag/vimtex'
+Plug 'sainnhe/sonokai'
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -286,3 +284,22 @@ if has('nvim')
   " Resume latest coc list.
   nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 endif
+
+" === THEME ===
+let g:airline_theme='sonokai'
+let g:airline_symbols_ascii = 1
+let g:airline_highlighting_cache = 1
+let g:airline#extensions#whitespace#enabled = 0
+
+let g:airline#extensions#tabline#enabled = 0
+
+if has('termguicolors')
+  set termguicolors
+endif
+
+let g:sonokai_style = 'default'
+let g:sonokai_enable_italic = 0
+let g:sonokai_disable_italic_comment = 1
+let g:sonokai_transparent_background = 1
+
+colorscheme sonokai

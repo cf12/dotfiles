@@ -756,4 +756,3 @@ live_config_reload: true
 
   # Print all received window events.
   #print_events: false
-
