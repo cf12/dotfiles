@@ -64,6 +64,24 @@ set t_vb=
 set tm=500
 
 
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+
+if stridx(&runtimepath, expand(vimDir)) == -1
+  " vimDir is not on runtimepath, add it
+  let &runtimepath.=','.vimDir
+endif
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
@@ -103,6 +121,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-sleuth'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'lervag/vimtex'
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -113,11 +132,6 @@ call plug#end()
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-
 
 if has('nvim')
   " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
