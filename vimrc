@@ -107,19 +107,19 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Initialize Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-sleuth'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'lervag/vimtex'
-Plug 'sainnhe/sonokai'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/syntastic'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'vim-airline/vim-airline'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tpope/vim-sleuth'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'lervag/vimtex'
+  Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -286,20 +286,10 @@ if has('nvim')
 endif
 
 " === THEME ===
-let g:airline_theme='sonokai'
 let g:airline_symbols_ascii = 1
 let g:airline_highlighting_cache = 1
 let g:airline#extensions#whitespace#enabled = 0
-
 let g:airline#extensions#tabline#enabled = 0
 
-if has('termguicolors')
-  set termguicolors
-endif
-
-let g:sonokai_style = 'default'
-let g:sonokai_enable_italic = 0
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_transparent_background = 1
-
-colorscheme sonokai
+autocmd vimenter * ++nested colorscheme gruvbox
+autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
