@@ -46,11 +46,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -104,14 +104,14 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: "Fira Code"
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -150,7 +150,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -174,49 +174,6 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-
-# Base16 Default Dark 256 - alacritty color config
-# Chris Kempson (http://chriskempson.com)
-colors:
-  # Default colors
-  primary:
-    background: '0x181818'
-    foreground: '0xd8d8d8'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x181818'
-    cursor: '0xd8d8d8'
-
-  # Normal colors
-  normal:
-    black:   '0x181818'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xd8d8d8'
-
-  # Bright colors
-  bright:
-    black:   '0x585858'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xf8f8f8'
-
-  indexed_colors:
-    - { index: 16, color: '0xdc9656' }
-    - { index: 17, color: '0xa16946' }
-    - { index: 18, color: '0x282828' }
-    - { index: 19, color: '0x383838' }
-    - { index: 20, color: '0xb8b8b8' }
-    - { index: 21, color: '0xe8e8e8' }
 
 # Bell
 #
@@ -756,3 +713,7 @@ live_config_reload: true
 
   # Print all received window events.
   #print_events: false
+
+colors:
+  primary:
+    background: '0x111111'

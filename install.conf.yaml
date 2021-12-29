@@ -8,6 +8,7 @@
 - link:
     ~/.vimrc: 
     ~/.tmux.conf: 
+    ~/.config/wallpaper.png: wallpaper.png
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml

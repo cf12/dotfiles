@@ -119,7 +119,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sleuth'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'lervag/vimtex'
-  Plug 'morhetz/gruvbox'
+  Plug 'dylanaraps/wal.vim'
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
@@ -291,5 +291,5 @@ let g:airline_highlighting_cache = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 0
 
-autocmd vimenter * ++nested colorscheme gruvbox
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+colorscheme wal
+
