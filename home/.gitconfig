@@ -1,3 +1,5 @@
 [user]
-	name = cf12
 	email = 11359669+cf12@users.noreply.github.com
+	name = cf12
+[pull]
+	rebase = false

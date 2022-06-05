@@ -3,16 +3,25 @@
       create: true
       relink: true
 
-- clean: ['~', '~/.config/fish', '~/.config/nvim']
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
+    ~/.gnupg:
 
 - link:
-    ~/.vimrc: 
-    ~/.tmux.conf: 
-    ~/.config/wallpaper.png: wallpaper.png
-    ~/.config/fish/config.fish: config/fish/config.fish
-    ~/.config/nvim/init.vim: config/nvim/init.vim
-    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
+    ~/.vimrc: home/.vimrc
+    ~/.tmux.conf: home/.tmux.conf
+    ~/.gitconfig: home/.gitconfig
+    ~/.config/fish/config.fish: home/.config/fish/config.fish
+    ~/.config/fish/fish_plugins: home/.config/fish/fish_plugins
+    ~/.config/nvim/init.vim: home/.config/nvim/init.vim
+    ~/.config/alacritty/alacritty.yml: home/.config/alacritty/alacritty.yml
+    ~/.config/kitty/kitty.conf: home/.config/kitty/kitty.conf
+    ~/.gnupg/gpg-agent.conf: home/.gnupg/gpg-agent.conf
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-
+  - git submodule update --init --recursive
+  - sudo pacman --noconfirm -S ttf-hack
+  - sudo pacman --noconfirm -S vim neovim tmux fish kitty
+  - fish scripts/init.fish
