@@ -10,18 +10,32 @@
     ~/.gnupg:
 
 - link:
-    ~/.vimrc: home/.vimrc
-    ~/.tmux.conf: home/.tmux.conf
-    ~/.gitconfig: home/.gitconfig
-    ~/.config/fish/config.fish: home/.config/fish/config.fish
-    ~/.config/fish/fish_plugins: home/.config/fish/fish_plugins
-    ~/.config/nvim/init.vim: home/.config/nvim/init.vim
-    ~/.config/alacritty/alacritty.yml: home/.config/alacritty/alacritty.yml
-    ~/.config/kitty/kitty.conf: home/.config/kitty/kitty.conf
-    ~/.gnupg/gpg-agent.conf: home/.gnupg/gpg-agent.conf
+    ~/.vimrc: src/common/.vimrc
+    ~/.tmux.conf: src/common/.tmux.conf
+    ~/.gitconfig: src/common/.gitconfig
+    ~/.config/fish/config.fish: src/common/.config/fish/config.fish
+    ~/.config/fish/fish_plugins: src/common/.config/fish/fish_plugins
+    ~/.config/nvim/init.vim: src/common/.config/nvim/init.vim
+    ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
+    ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf
+
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Linux" ]'
+- link:
+    ~/.gnupg/gpg-agent.conf: src/linux/.gnupg/gpg-agent.conf
+
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Darwin" ]'
+- link:
+    ~/.gnupg/gpg-agent.conf: src/darwin/.gnupg/gpg-agent.conf
 
 - shell:
   - git submodule update --init --recursive
-  - sudo pacman --noconfirm -S ttf-hack
-  - sudo pacman --noconfirm -S vim neovim tmux fish kitty
   - fish scripts/init.fish
+
+  - description: Run bootstrap.sh
+    command: ./scripts/bootstrap.sh
+    stdout: true
+    stdin: true
