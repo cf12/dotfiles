@@ -5,6 +5,8 @@ if [ "$(uname -s)" == "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
+  brew tap homebrew/cask-fonts
+  brew install font-hack
   brew install vim neovim tmux fish kitty pinentry-mac gnupg
 elif [[ -f /etc/arch-release ]]; then 
   sudo pacman --noconfirm -Sy
@@ -14,7 +16,10 @@ elif [[ -f /etc/arch-release ]]; then
   chsh -s /usr/bin/fish
 elif [[ -f /etc/lsb-release ]]; then
   sudo apt-get update
+  sudo apt-get install -y fonts-hack-ttf
   sudo apt-get install -y vim neovim tmux fish kitty
 
   chsh -s /usr/bin/fish
 fi
+
+fish -c "fisher update"
