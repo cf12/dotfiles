@@ -8,12 +8,34 @@ set -x GPG_TTY (tty)
 # Aliases
 alias ll "ls -l"
 
+# Custom functions
+function git_convert_remote -d "git_convert_ssh <remote>"
+    set -l remote (git remote get-url $argv[1])
+    set -l remote_stripped (echo $remote | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')
+    set -l url
+
+    switch $remote
+    case 'https://*'
+        echo "Converting remote $argv[1] to SSH"
+        set url "git@github.com:$remote_stripped"
+    case 'git@github.com:*'
+        echo "Converting remote $argv[1] to HTTPS"
+        set url "https://github.com/$remote_stripped"
+    case '*'
+        return 1
+    end
+
+    git remote set-url $argv[1] $url
+end
+
+# Custom theme settings
 set -g theme_display_git_default_branch yes
 set -g theme_title_display_process yes
 set -g theme_display_user yes
 set -g theme_display_sudo_user yes
 set -g theme_color_scheme base16-dark
 
+# Custom prompt / greeting
 function fish_right_prompt; end
 
 function fish_greeting
