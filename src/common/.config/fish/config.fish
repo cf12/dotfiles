@@ -45,3 +45,8 @@ function fish_greeting
         --color_blocks off
     end
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/cf12/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
