@@ -3,10 +3,12 @@ gpgconf --launch gpg-agent
 
 set -e SSH_AGENT_PID
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_AGENT_INFO (gpgconf --list-dirs agent-socket):0:1
 set -x GPG_TTY (tty)
 
 # Aliases
 alias ll "ls -l"
+alias python python3
 
 # Custom functions
 function git_convert_remote -d "git_convert_ssh <remote>"
@@ -46,7 +48,16 @@ function fish_greeting
     end
 end
 
+# Paths
+set -gx PATH "$HOME/.local/bin" $PATH
+
 # pnpm
 set -gx PNPM_HOME "/Users/cf12/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
