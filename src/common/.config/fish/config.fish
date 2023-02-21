@@ -50,14 +50,3 @@ end
 
 # Paths
 set -gx PATH "$HOME/.local/bin" $PATH
-
-# pnpm
-set -gx PNPM_HOME "/Users/cf12/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
-# pnpm end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
