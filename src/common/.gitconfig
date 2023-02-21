@@ -1,7 +1,12 @@
 [user]
 	email = 11359669+cf12@users.noreply.github.com
 	name = cf12
+	signingkey = brian@cf12.org
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[auto]
+	crlf = true
+[commit]
+	gpgsign = true

@@ -19,17 +19,28 @@
     ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
     ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf
 
+
 - defaults:
     link:
-      if: '[ "$(uname -s)" = "Linux" ]'
+      if: '[ "$(uname -s)" = "Linux" ] && grep -qiv "microsoft" /proc/version'
 - link:
-    ~/.gnupg/gpg-agent.conf: src/linux/.gnupg/gpg-agent.conf
+    ~/.gnupg/gpg-agent.conf: src/linux-common/.gnupg/gpg-agent.conf
+
+
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Linux" ] && grep -qi "microsoft" /proc/version'
+- link:
+    ~/.gnupg/gpg-agent.conf: src/linux-wsl/.gnupg/gpg-agent.conf
+    ~/.config/pinentry-wsl-ps1.sh: src/linux-wsl/.config/pinentry-wsl-ps1.sh
+
 
 - defaults:
     link:
       if: '[ "$(uname -s)" = "Darwin" ]'
 - link:
     ~/.gnupg/gpg-agent.conf: src/darwin/.gnupg/gpg-agent.conf
+
 
 - shell:
   - git submodule update --init --recursive
