@@ -32,5 +32,5 @@ elif [[ -f /etc/lsb-release ]]; then
   chsh -s /usr/bin/fish
 fi
 
-echo "[i] Running 'fisher update'"
-fish -c "fisher update"
+echo "[i] Running init.fish"
+fish scripts/init.fish

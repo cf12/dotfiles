@@ -18,35 +18,31 @@
     ~/.config/nvim/init.vim: src/common/.config/nvim/init.vim
     ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
     ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf
-
+    ~/.ssh/config: src/common/.ssh/config
 
 - defaults:
     link:
-      if: '[ "$(uname -s)" = "Linux" ] && grep -qiv "microsoft" /proc/version'
+      if: '[ -f /etc/lsb-release ] && ! grep -iq "microsoft" /proc/version'
 - link:
     ~/.gnupg/gpg-agent.conf: src/linux-common/.gnupg/gpg-agent.conf
 
-
 - defaults:
     link:
-      if: '[ "$(uname -s)" = "Linux" ] && grep -qi "microsoft" /proc/version'
+      if: '[ -f /etc/lsb-release ] && grep -iq "microsoft" /proc/version'
 - link:
     ~/.gnupg/gpg-agent.conf: src/linux-wsl/.gnupg/gpg-agent.conf
     ~/.config/pinentry-wsl-ps1.sh: src/linux-wsl/.config/pinentry-wsl-ps1.sh
 
-
 - defaults:
     link:
-      if: '[ "$(uname -s)" = "Darwin" ]'
+      if: '[ "$(uname -s)" == "Darwin" ]'
 - link:
     ~/.gnupg/gpg-agent.conf: src/darwin/.gnupg/gpg-agent.conf
 
-
 - shell:
-  - git submodule update --init --recursive
-  - fish scripts/init.fish
+    - git submodule update --init --recursive
 
-  - description: Run bootstrap.sh
-    command: ./scripts/bootstrap.sh
-    stdout: true
-    stdin: true
+    - description: Run bootstrap.sh
+      command: ./scripts/bootstrap.sh
+      stdout: true
+      stdin: true
