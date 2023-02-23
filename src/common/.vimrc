@@ -107,18 +107,17 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Initialize Plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'vim-airline/vim-airline'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'tpope/vim-sleuth'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'fnune/base16-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'fnune/base16-vim'
 call plug#end()
 
 " [P] NERDTree config
