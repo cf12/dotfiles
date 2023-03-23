@@ -1,4 +1,6 @@
 jorgebucaran/fisher
 jorgebucaran/nvm.fish
 oh-my-fish/theme-bobthefish
-jethrokuan/z
+patrickf1/fzf.fish
+acomagu/fish-async-prompt
+jorgebucaran/autopair.fish
