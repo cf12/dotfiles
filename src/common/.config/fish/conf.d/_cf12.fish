@@ -36,17 +36,16 @@ set -g theme_title_display_process yes
 set -g theme_display_user yes
 set -g theme_display_sudo_user yes
 set -g theme_color_scheme base16-dark
+set -g theme_display_date no
+# set -g theme_date_format "+%H:%M %p"
 
 # Custom prompt / greeting
-function fish_right_prompt; end
-
-function fish_greeting
-    if command -sq neofetch
-        neofetch \
-        --disable packages cpu gpu \
-        --color_blocks off
-    end
-end
+# function fish_right_prompt; end
+function fish_greeting; end
 
 # Paths
 set -gx PATH "$HOME/.local/bin" $PATH
+
+# TODO: this doesn't work in _cf12.fish, only in config.fish
+fzf_configure_bindings --directory=\cf
+set fzf_preview_file_cmd cat -n
