@@ -45,7 +45,3 @@ function fish_greeting; end
 
 # Paths
 set -gx PATH "$HOME/.local/bin" $PATH
-
-# TODO: this doesn't work in _cf12.fish, only in config.fish
-fzf_configure_bindings --directory=\cf
-set fzf_preview_file_cmd cat -n
