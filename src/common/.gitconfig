@@ -10,3 +10,26 @@
 	crlf = true
 [commit]
 	gpgsign = true
+[alias]
+    l = log --oneline
+
+    a = add
+    ap = add -p
+    c = commit --verbose
+    ca = commit -a --verbose
+    cm = commit -m
+    cam = commit -am
+    m = commit --amend --verbose
+
+	undo = reset --soft HEAD~
+    
+    d = diff
+    ds = diff --stat
+    dc = diff --cached
+
+    s = status -s
+    co = checkout
+    cob = checkout -b
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    la = "!git config -l | grep alias | cut -c 7-"
