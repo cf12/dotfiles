@@ -7,7 +7,7 @@ set -x GPG_AGENT_INFO (gpgconf --list-dirs agent-socket):0:1
 set -x GPG_TTY (tty)
 
 # Aliases
-alias ll "ls -l"
+alias ll "ls -lah"
 alias python python3
 
 # Custom functions
