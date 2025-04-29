@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
   echo "[i] MacOS detected, bootstrapping..."
   if ! command -v brew &> /dev/null; then
     echo "[i] Homebrew not found, downloading + installing..."

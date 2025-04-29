@@ -142,5 +142,7 @@ let g:airline_highlighting_cache = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 0
 
+let g:base16_colorspace=256
 let base16colorspace=256
+
 colorscheme base16-default-dark

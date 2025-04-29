@@ -9,6 +9,12 @@
       recursive: true
     ~/.gnupg:
 
+- create:
+    - ~/.config
+    - ~/.gnupg:
+      mode: 0700
+    - ~/code
+
 - link:
     ~/.vimrc: src/common/.vimrc
     ~/.tmux.conf: src/common/.tmux.conf
@@ -35,7 +41,7 @@
 
 - defaults:
     link:
-      if: '[ "$(uname -s)" == "Darwin" ]'
+      if: '[ "$(uname -s)" = "Darwin" ]'
 - link:
     ~/.gnupg/gpg-agent.conf: src/darwin/.gnupg/gpg-agent.conf
 

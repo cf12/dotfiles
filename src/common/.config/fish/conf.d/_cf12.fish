@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # GPG SSH Setup
 gpgconf --launch gpg-agent
 
