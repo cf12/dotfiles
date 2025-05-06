@@ -3,17 +3,16 @@
       create: true
       relink: true
 
+- create:
+    - ~/.config
+    - ~/.gnupg:
+      mode: 0700
+
 - clean:
     ~/:
     ~/.config:
       recursive: true
     ~/.gnupg:
-
-- create:
-    - ~/.config
-    - ~/.gnupg:
-      mode: 0700
-    - ~/code
 
 - link:
     ~/.vimrc: src/common/.vimrc

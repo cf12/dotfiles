@@ -1,5 +1,13 @@
 #!/bin/bash
 
+echo "[i] Run bootstrap? (y/N)"
+read -n 1 -r
+echo 
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  echo "[i] Skipping bootstrap..."
+  exit 0
+fi
+
 if [ "$(uname -s)" = "Darwin" ]; then
   echo "[i] MacOS detected, bootstrapping..."
   if ! command -v brew &> /dev/null; then
