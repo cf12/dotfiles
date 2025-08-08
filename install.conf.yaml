@@ -20,7 +20,7 @@
     ~/.gitconfig: src/common/.gitconfig
     ~/.config/fish/conf.d/_cf12.fish: src/common/.config/fish/conf.d/_cf12.fish
     ~/.config/fish/fish_plugins: src/common/.config/fish/fish_plugins
-    ~/.config/nvim/init.vim: src/common/.config/nvim/init.vim
+    ~/.config/nvim: src/common/.config/nvim
     ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
     ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf
     ~/.ssh/config: src/common/.ssh/config
