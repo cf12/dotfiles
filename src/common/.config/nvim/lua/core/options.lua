@@ -5,7 +5,7 @@ vim.g.have_nerd_font = true
 
 vim.o.relativenumber = true
 
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 
 vim.o.mouse = "a"
 vim.o.showmode = false
