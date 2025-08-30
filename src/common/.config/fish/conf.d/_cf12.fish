@@ -1,4 +1,4 @@
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # GPG SSH Setup (old)
 # gpgconf --launch gpg-agent
@@ -26,14 +26,14 @@ function git_convert_remote -d "git_convert_ssh <remote>"
     set -l url
 
     switch $remote
-    case 'https://*'
-        echo "Converting remote $argv[1] to SSH"
-        set url "git@github.com:$remote_stripped"
-    case 'git@github.com:*'
-        echo "Converting remote $argv[1] to HTTPS"
-        set url "https://github.com/$remote_stripped"
-    case '*'
-        return 1
+        case 'https://*'
+            echo "Converting remote $argv[1] to SSH"
+            set url "git@github.com:$remote_stripped"
+        case 'git@github.com:*'
+            echo "Converting remote $argv[1] to HTTPS"
+            set url "https://github.com/$remote_stripped"
+        case '*'
+            return 1
     end
 
     git remote set-url $argv[1] $url
@@ -50,7 +50,8 @@ set -g theme_display_date no
 
 # Custom prompt / greeting
 # function fish_right_prompt; end
-function fish_greeting; end
+function fish_greeting
+end
 
 # Paths
 set -gx PATH "$HOME/.local/bin" $PATH
