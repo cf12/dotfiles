@@ -45,6 +45,7 @@
       if: '[ "$(uname -s)" = "Darwin" ]'
 - link:
     ~/.gnupg/gpg-agent.conf: src/darwin/.gnupg/gpg-agent.conf
+    ~/.config/aerospace/.aerospace.toml: src/darwin/.config/aerospace/.aerospace.toml
 
 - shell:
     - git submodule update --init --recursive
