@@ -1,3 +1,4 @@
+-- [[ Leader ]]
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -5,13 +6,18 @@ vim.g.have_nerd_font = true
 
 vim.o.relativenumber = true
 
--- vim.o.clipboard = "unnamedplus"
-
 vim.o.mouse = "a"
 vim.o.showmode = false
 
 vim.o.wrap = false
 
+vim.opt.winborder = "rounded"
+
+-- vim.schedule(function()
+--   vim.o.clipboard = 'unnamedplus'
+-- end)
+
+-- [[ Tab options ]]
 vim.o.breakindent = true
 vim.o.autoindent = true
 vim.o.smartindent = true
@@ -20,6 +26,7 @@ vim.o.smarttab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
+-- Save undo history
 vim.o.undofile = true
 
 -- Case insensitive searching

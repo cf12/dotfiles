@@ -1,19 +1,17 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # GPG SSH Setup (old)
-# gpgconf --launch gpg-agent
-# set -e SSH_AGENT_PID
-# set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-# set -x GPG_AGENT_INFO (gpgconf --list-dirs agent-socket):0:1
+gpgconf --launch gpg-agent
+set -e SSH_AGENT_PID
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_AGENT_INFO (gpgconf --list-dirs agent-socket):0:1
 
 # GPG SSH Setup 
-set -e SSH_AGENT_PID
-if test -z $gnupg_SSH_AUTH_SOCK_BY; or test $gnupg_SSH_AUTH_SOCK_BY -ne $fish_pid
-    set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-end
-set -gx GPG_TTY (tty)
-
-gpg-connect-agent updatestartuptty /bye >/dev/null
+# set -e SSH_AGENT_PID
+# if test -z $gnupg_SSH_AUTH_SOCK_BY; or test $gnupg_SSH_AUTH_SOCK_BY -ne $fish_pid
+#     set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+# end
+# set -gx GPG_TTY (tty)
+#
+# gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Aliases
 alias ll "ls -lah"

@@ -21,7 +21,7 @@
     ~/.p10k.zsh: src/common/.p10k.zsh
     ~/.tmux.conf: src/common/.tmux.conf
     ~/.gitconfig: src/common/.gitconfig
-    ~/.config/fish/conf.d/_cf12.fii: src/common/.config/fish/conf.d/_cf12.fish
+    ~/.config/fish/conf.d/_cf12.fish: src/common/.config/fish/conf.d/_cf12.fish
     ~/.config/nvim: src/common/.config/nvim
     ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
     ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf

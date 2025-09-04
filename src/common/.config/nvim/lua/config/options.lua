@@ -3,18 +3,13 @@
 -- Add any additional options here
 
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "fzf"
-vim.g.lazyvim_cmp = "nvim-cmp"
-vim.g.autoformat = false
+-- vim.g.lazyvim_picker = "snacks_picker"
+vim.g.lazyvim_cmp = "blink.cmp"
+vim.g.autoformat = true
+vim.g.lazyvim_prettier_needs_config = false
+-- vim.g.vscode = true
 
--- Indents + tabstops
-vim.o.breakindent = true
-vim.o.autoindent = true
-vim.o.smartindent = true
-vim.o.expandtab = true
-vim.o.smarttab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
+vim.opt.winborder = "rounded"
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 4

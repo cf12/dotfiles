@@ -1,6 +1,3 @@
 return {
-  {
-    "noice.nvim",
-    enabled = false,
-  },
+  { "noice.nvim", enabled = false },
 }
