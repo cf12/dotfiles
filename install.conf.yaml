@@ -25,6 +25,7 @@
     ~/.config/nvim: src/common/.config/nvim
     ~/.config/alacritty/alacritty.yml: src/common/.config/alacritty/alacritty.yml
     ~/.config/kitty/kitty.conf: src/common/.config/kitty/kitty.conf
+    ~/.config/opencode/opencode.jsonc: src/common/.config/opencode/opencode.jsonc
     ~/.ssh/config: src/common/.ssh/config
 
 - defaults:
