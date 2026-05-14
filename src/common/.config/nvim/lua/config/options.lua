@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 vim.g.snacks_animate = false
--- vim.g.lazyvim_picker = "snacks_picker"
+vim.g.lazyvim_picker = "snacks"
 vim.g.lazyvim_cmp = "blink.cmp"
 vim.g.autoformat = true
 vim.g.lazyvim_prettier_needs_config = false
