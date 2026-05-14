@@ -14,4 +14,5 @@
     "webfetch": "ask",
     "websearch": "ask",
   },
+  "lsp": true,
 }
